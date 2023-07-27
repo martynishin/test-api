@@ -6,10 +6,21 @@ Below you will find all the necessary instructions.
 #### 1. Since it's a test project, just create .env file from .env.example including DB config
 `cp .env.example .env`
 
-#### 2. Build and run a Docker environment
+#### 2. Install Composer dependencies
+This command uses a small Docker container containing PHP and Composer to install the application's dependencies:
+```
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+#### 3. Build and run a Docker environment
 `./vendor/bin/sail up -d`
 
-#### 3. Run migrations and seeders
+#### 4. Run migrations and seeders
 `./vendor/bin/sail artisan migrate:fresh --seed`
 
 <br>
