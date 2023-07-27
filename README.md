@@ -72,7 +72,7 @@ All necessary endpoints you can find in `routes/api.php`
 
 #### To get Bearer Token just call this endpoint:
 
-`POST /api/tokens`
+`POST http://localhost/api/tokens`
 
 Use any email from `Database/Seeders/DatabaseSeeder.php`, e.g. `sony@example.com`
 
