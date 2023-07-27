@@ -4,7 +4,9 @@ Below you will find all the necessary instructions.
 ## The first environment setup (macOS)
 
 #### 1. Since it's a test project, just create .env file from .env.example including DB config
-`cp .env.example .env`
+```
+cp .env.example .env
+```
 
 #### 2. Install Composer dependencies
 This command uses a small Docker container containing PHP and Composer to install the application's dependencies:
@@ -18,10 +20,19 @@ docker run --rm \
 ```
 
 #### 3. Build and run a Docker environment
-`./vendor/bin/sail up -d`
+```
+./vendor/bin/sail up -d
+```
 
-#### 4. Run migrations and seeders
-`./vendor/bin/sail artisan migrate:fresh --seed`
+#### 4. Make sure thar 2 Docker containers are up and running
+`test-api-laravel.test-1`
+and
+`test-api-pgsql-1`
+
+#### 5. Run migrations and seeders
+```
+./vendor/bin/sail artisan migrate:fresh --seed
+```
 
 <br>
 
@@ -76,10 +87,14 @@ Request payload example:
 #### 2. Automated
 Just execute this command in your terminal:
 
-`./vendor/bin/sail artisan test`
+```
+./vendor/bin/sail artisan test
+```
 
 If you want to execute a specific test case:
 
-`./vendor/bin/sail artisan test --filter test_it_can_update_one_column`
+```
+./vendor/bin/sail artisan test --filter test_it_can_update_one_column
+```
 
 Testing Database config you can find in `.env.testing`
