@@ -24,7 +24,11 @@ docker run --rm \
 ./vendor/bin/sail up -d
 ```
 
-#### 4. Make sure thar 2 Docker containers are up and running
+#### 4. Make sure the two Docker containers are up and running
+```
+docker ps
+```
+Output:
 `test-api-laravel.test-1`
 and
 `test-api-pgsql-1`
